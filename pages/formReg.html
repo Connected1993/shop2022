@@ -1,0 +1,14 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../css/form.css">
+<script defer src="../js/events.js"></script>
+
+<form id="registration" method="POST" action="../core/handler.php">  
+    <input name="login" type="text" placeholder="Введите логин" required><br>
+    <input name="pass1" type="password" placeholder="Введите пароль" required><br>
+    <input name="pass2" type="password" placeholder="Подтвердите пароль" required><br>
+    <input name="email" type="email" placeholder="Введите почту" required><br>
+    <span id="result"></span>
+    <input hidden name="action" value="registration1"><br>
+    <input type="submit" name="registration" value="Регистрация">
+</form>
+

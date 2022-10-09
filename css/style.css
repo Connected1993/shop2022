@@ -1,0 +1,144 @@
+:root {
+    --bg:antiquewhite;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    margin: 0;
+    height: 100%;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--bg);
+    padding: 10px;
+    display: flex;
+}
+
+.search {
+    margin-left: auto;
+}
+
+main {
+    flex-grow: 1;
+    position: relative;
+}
+
+#product {
+    padding: 0 20px;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#product input,
+#product textarea,
+#product select {
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    outline: none;
+    resize: none;
+}
+
+
+.box-zone {
+    /* position: relative;
+    height: 100px; */
+    text-align: center;
+}
+.drag-zone {
+    /* transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%; */
+    position: relative;
+    cursor: pointer;
+    border: 4px dashed black;
+    height: 100px;
+    width: 100%;
+    min-width: 100px;
+}
+.drag-preview {
+    overflow: auto;
+    background-color: azure;
+    width: 100%;
+    max-width: 180px;
+    min-width: 100px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.btn-upload {
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 1px 1px 3px black;
+    box-sizing: border-box;
+    background-color: chartreuse;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    font-size: 24px;
+    transition: all .3;
+}
+
+.btn-upload:hover {
+    background-color: rgb(204, 246, 163);
+}
+.drag-zone__title {
+    color: rgba(192, 192, 192, 0.726);
+    pointer-events: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.preview__item {
+    position: relative;
+    display: inline-block;
+}
+
+.preview__item .fa-times-circle-o {
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 50%;
+    line-height: 25px;
+    box-shadow: 0px 0px 5px 1px black;
+    color: red;
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.preview-img {
+    height: 75px;
+    border: 2px solid black;
+    margin: 5px;
+}
+
+
+
+footer {
+    background-color: var(--bg) ;
+}
