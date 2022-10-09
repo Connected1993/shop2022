@@ -10,13 +10,29 @@ document.body.addEventListener('click',function(event){
   // проверяем имя элемента   
   switch(elem.nodeName)
   {
+    case 'INPUT':
     case 'LI':
+            // получаем список атрибутов текущего элемента
+            // если не submit тогда выходим с этого блока кода
+            if (elem.getAttribute('type') != 'submit' && elem.nodeName == 'INPUT') return false
             // нужно проверить, что этот LI находится в блоке filter
             // closest('.filters')- указываем до какого элемента мы всплываем
             if ( filters )
             {
                 // получаем текст и заменяем его в элементе с классом filters__name
-                elem.closest('div').querySelector('.filters__name span').textContent = elem.textContent 
+                if (elem.nodeName != 'INPUT')
+                {
+                  elem.closest('div').querySelector('.filters__name span').textContent = elem.textContent 
+                }
+                else
+                {
+                  // поднялись до родителя
+                  let ul = elem.parentNode
+                  let val1 = ul.querySelectorAll('input')[0]
+                  let val2 = ul.querySelectorAll('input')[1]
+
+                  elem.closest('div').querySelector('.filters__name span').textContent = val1.value +' - '+ val2.value  
+                }
             
                 elem.parentNode.setAttribute( 'data',elem.getAttribute('data-id') )
 
